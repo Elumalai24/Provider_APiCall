@@ -11,7 +11,6 @@ class ApiService {
       final url = Uri.parse("https://jsonplaceholder.typicode.com/todos");
       final response = await http.get(Uri.parse(url.toString()));
       if (response.statusCode == 200) {
-        print("status 200");
         print(response.body);
         final List<dynamic> json = jsonDecode(response.body);
 List<Users> users = json.map((jsonMap) => Users.fromJson(jsonMap)).toList();
